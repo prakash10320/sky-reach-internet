@@ -55,31 +55,31 @@ const plans = [
 
 const PlansSection = () => {
   return (
-    <section id="plans" className="py-24 bg-gradient-to-br from-secondary to-secondary-light relative overflow-hidden">
+    <section id="plans" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-secondary to-secondary-light relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-4 sm:left-10 w-24 sm:w-32 h-24 sm:h-32 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-4 sm:right-10 w-32 sm:w-48 h-32 sm:h-48 bg-accent/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 glass px-6 py-3 rounded-full mb-6">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="inline-flex items-center space-x-2 glass px-4 sm:px-6 py-3 rounded-full mb-6">
             <Star className="h-4 w-4 text-accent" />
-            <span className="text-white font-medium">Choose Your Perfect Plan</span>
+            <span className="text-white font-medium text-sm sm:text-base">Choose Your Perfect Plan</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 px-4 sm:px-0">
             Select the Ideal Connectivity
             <span className="text-gradient-primary block">Solution for Your Needs</span>
           </h2>
-          <p className="text-xl text-white/80 leading-relaxed">
+          <p className="text-lg sm:text-xl text-white/80 leading-relaxed px-4 sm:px-0">
             Transparent pricing with professional setup and no long-term contract requirements.
           </p>
         </div>
 
         {/* Plans Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
             <div
               key={plan.name}

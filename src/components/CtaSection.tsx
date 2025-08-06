@@ -9,14 +9,14 @@ const offers = [
 
 const CtaSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-primary to-accent relative overflow-hidden">
+    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-primary to-accent relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-4 sm:left-20 w-32 sm:w-64 h-32 sm:h-64 bg-white/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-4 sm:right-20 w-48 sm:w-96 h-48 sm:h-96 bg-white/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Gift Icon */}
           <div className="inline-flex items-center justify-center p-4 rounded-2xl bg-white/20 backdrop-blur-sm mb-8">
@@ -24,12 +24,12 @@ const CtaSection = () => {
           </div>
 
           {/* Main Heading */}
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 px-4 sm:px-0">
             Claim Your Free $100
             <span className="block">Prepaid Card Today!</span>
           </h2>
 
-          <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl lg:text-2xl text-white/90 mb-8 leading-relaxed px-4 sm:px-0">
             Order Now and Claim Your Free $100 Prepaid Card! Don't miss this limited-time offer! 
             Place your order today and receive a $100 prepaid card for shopping, dining, or bills.
           </p>
@@ -41,25 +41,26 @@ const CtaSection = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col md:flex-row gap-6 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 px-4 sm:px-0">
             <a 
               href="tel:1-888-970-1698" 
-              className="flex items-center justify-center space-x-3 bg-white text-primary hover:bg-white/90 font-bold px-10 py-5 rounded-2xl shadow-2xl hover:shadow-white/25 transition-all duration-300 hover:scale-105 text-lg"
+              className="flex items-center justify-center space-x-3 bg-white text-primary hover:bg-white/90 font-bold px-6 sm:px-10 py-4 sm:py-5 rounded-2xl shadow-2xl hover:shadow-white/25 transition-all duration-300 hover:scale-105 text-base sm:text-lg"
             >
-              <Phone className="h-6 w-6" />
-              <span>Call 1-888-970-1698</span>
+              <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
+              <span className="hidden sm:inline">Call 1-888-970-1698</span>
+              <span className="sm:hidden">Call Now</span>
             </a>
             <a 
               href="#plans" 
-              className="flex items-center justify-center space-x-3 glass text-white hover:bg-white/20 font-semibold px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-lg"
+              className="flex items-center justify-center space-x-3 glass text-white hover:bg-white/20 font-semibold px-6 sm:px-10 py-4 sm:py-5 rounded-2xl transition-all duration-300 hover:scale-105 text-base sm:text-lg"
             >
               <span>View Plans</span>
-              <ArrowRight className="h-6 w-6" />
+              <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6" />
             </a>
           </div>
 
           {/* Offer Features */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {offers.map((offer, index) => (
               <div
                 key={offer}
@@ -75,22 +76,22 @@ const CtaSection = () => {
           </div>
 
           {/* Final CTA */}
-          <div className="mt-12 p-8 glass rounded-2xl">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <div className="mt-12 p-6 sm:p-8 glass rounded-2xl">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 text-center">
               Ready to Get Started?
             </h3>
-            <p className="text-white/80 mb-6">
+            <p className="text-white/80 mb-6 text-center text-sm sm:text-base">
               Call now to speak with our satellite internet experts and claim your free $100 prepaid card!
             </p>
-            <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
               <a 
                 href="tel:1-888-970-1698" 
-                className="text-2xl font-bold text-white hover:text-white/80 transition-colors flex items-center space-x-2"
+                className="text-xl sm:text-2xl font-bold text-white hover:text-white/80 transition-colors flex items-center space-x-2 text-center"
               >
-                <Phone className="h-6 w-6" />
+                <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
                 <span>1-888-970-1698</span>
               </a>
-              <div className="text-white/60 text-sm">
+              <div className="text-white/60 text-xs sm:text-sm text-center">
                 Available 24/7 • No commitment required
               </div>
             </div>

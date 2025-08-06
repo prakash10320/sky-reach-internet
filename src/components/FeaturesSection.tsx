@@ -62,26 +62,26 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-24 bg-gradient-to-br from-background to-muted">
-      <div className="container mx-auto px-4">
+    <section id="features" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-background to-muted">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 glass px-6 py-3 rounded-full mb-6">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="inline-flex items-center space-x-2 glass px-4 sm:px-6 py-3 rounded-full mb-6">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-foreground font-medium">Why Choose SkyLink</span>
+            <span className="text-foreground font-medium text-sm sm:text-base">Why Choose SkyLink</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 px-4 sm:px-0">
             Unmatched Reliability, Speed & 
             <span className="text-gradient-primary block">Coverage Worldwide</span>
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed px-4 sm:px-0">
             Our satellite internet service provides unmatched reliability, speed, and coverage 
             to keep you connected anywhere, anytime.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
@@ -91,17 +91,17 @@ const FeaturesSection = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex flex-col items-center text-center space-y-4">
-                  <div className={`p-4 rounded-2xl bg-gradient-to-br ${
+                  <div className={`p-3 sm:p-4 rounded-2xl bg-gradient-to-br ${
                     feature.color.includes('primary') 
                       ? 'from-primary/10 to-primary/5' 
                       : 'from-accent/10 to-accent/5'
                   } group-hover:scale-110 transition-transform duration-300`}>
-                    <IconComponent className={`h-8 w-8 ${feature.color}`} />
+                    <IconComponent className={`h-6 w-6 sm:h-8 sm:w-8 ${feature.color}`} />
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground">
+                  <h3 className="text-lg sm:text-xl font-semibold text-foreground">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                     {feature.description}
                   </p>
                 </div>
