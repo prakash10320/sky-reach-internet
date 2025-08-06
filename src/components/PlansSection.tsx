@@ -1,0 +1,176 @@
+import { Check, Phone, Star } from 'lucide-react';
+
+const plans = [
+  {
+    name: 'Residential Plan',
+    subtitle: 'Perfect for homes',
+    price: '$120',
+    period: '/mo + taxes',
+    speed: 'Low Latency Unlimited Speed',
+    features: [
+      'No data caps',
+      'Stable and secure connectivity for your residence',
+      'Enjoy seamless streaming and browsing',
+      'Round-the-clock customer support',
+      '99.9% reliability'
+    ],
+    popular: false,
+    color: 'primary'
+  },
+  {
+    name: 'Roam Plan',
+    subtitle: 'For mobile connectivity',
+    price: '$50',
+    period: '/mo + taxes',
+    speed: 'Up to 500 Mbps',
+    package: 'Unlimited: $165/mo',
+    features: [
+      'Reliable high-speed connectivity at sea',
+      '24/7 onboard technical support',
+      'Smooth streaming and seamless navigation',
+      'Multi-device connectivity with secure encryption',
+      '99.9% reliability'
+    ],
+    popular: true,
+    color: 'accent'
+  },
+  {
+    name: 'Boat Plan',
+    subtitle: 'For maritime use',
+    price: '$50',
+    period: '/mo + taxes',
+    speed: 'Up to 300 Mbps',
+    package: '1024GB: $165/mo',
+    features: [
+      'Stable and secure connectivity on open waters',
+      'Enjoy seamless streaming and browsing while offshore',
+      'Round-the-clock customer support',
+      'Weather-resistant equipment with easy installation',
+      'End-to-end encryption for secure communications'
+    ],
+    popular: false,
+    color: 'primary'
+  }
+];
+
+const PlansSection = () => {
+  return (
+    <section id="plans" className="py-24 bg-gradient-to-br from-secondary to-secondary-light relative overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute top-0 left-0 w-full h-full">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-48 h-48 bg-accent/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center space-x-2 glass px-6 py-3 rounded-full mb-6">
+            <Star className="h-4 w-4 text-accent" />
+            <span className="text-white font-medium">Choose Your Perfect Plan</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Select the Ideal Connectivity
+            <span className="text-gradient-primary block">Solution for Your Needs</span>
+          </h2>
+          <p className="text-xl text-white/80 leading-relaxed">
+            Transparent pricing with professional setup and no long-term contract requirements.
+          </p>
+        </div>
+
+        {/* Plans Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {plans.map((plan, index) => (
+            <div
+              key={plan.name}
+              className={`card-pricing ${plan.popular ? 'popular' : ''} group`}
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              {/* Popular Badge */}
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-accent text-accent-foreground px-6 py-2 rounded-full text-sm font-semibold">
+                    Most Popular
+                  </div>
+                </div>
+              )}
+
+              <div className="space-y-6">
+                {/* Plan Header */}
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                  <p className="text-white/70">{plan.subtitle}</p>
+                  <div className="mt-4">
+                    <div className="text-4xl font-bold text-white">
+                      {plan.price}
+                      <span className="text-lg font-normal text-white/70">{plan.period}</span>
+                    </div>
+                    {plan.package && (
+                      <div className="text-accent font-semibold mt-2">{plan.package}</div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Speed Info */}
+                <div className="text-center p-4 glass rounded-xl">
+                  <div className="text-sm text-white/70 mb-1">Speed</div>
+                  <div className="font-semibold text-white">{plan.speed}</div>
+                </div>
+
+                {/* Features */}
+                <div className="space-y-3">
+                  <h4 className="font-semibold text-white">Features</h4>
+                  <ul className="space-y-3">
+                    {plan.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start space-x-3">
+                        <div className={`p-1 rounded-full ${
+                          plan.color === 'accent' 
+                            ? 'bg-accent/20' 
+                            : 'bg-primary/20'
+                        } mt-0.5`}>
+                          <Check className={`h-3 w-3 ${
+                            plan.color === 'accent' ? 'text-accent' : 'text-primary'
+                          }`} />
+                        </div>
+                        <span className="text-white/80 text-sm leading-relaxed">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* CTA Button */}
+                <div className="pt-4">
+                  <a 
+                    href="tel:1-888-970-1698" 
+                    className={`w-full flex items-center justify-center space-x-2 ${
+                      plan.popular ? 'btn-accent' : 'btn-primary'
+                    } group-hover:scale-105 transition-transform duration-300`}
+                  >
+                    <Phone className="h-4 w-4" />
+                    <span>Call 1-888-970-1698</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Note */}
+        <div className="text-center mt-16 space-y-4">
+          <p className="text-white/80">
+            All plans include professional setup and no long-term contract requirements.
+          </p>
+          <p className="text-white/60 text-sm">
+            Prices shown do not include applicable taxes and fees.
+          </p>
+          <div className="inline-flex items-center space-x-2 glass px-6 py-3 rounded-full">
+            <Phone className="h-4 w-4 text-accent" />
+            <span className="text-white font-medium">Need help choosing? Call 1-888-970-1698</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PlansSection;
