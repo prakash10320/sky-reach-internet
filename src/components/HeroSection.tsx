@@ -103,7 +103,7 @@ const HeroSection = () => {
                 <span className="sm:hidden">Call Now</span>
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </a>
-              <a href="#plans" className="btn-secondary text-center bg-blue-300 ">
+              <a href="#plans" className="btn-secondary text-center bg-blue-500 ">
                 View Plans
               </a>
             </div>
