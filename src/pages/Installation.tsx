@@ -1,6 +1,6 @@
 
 import PageLayout from '@/components/PageLayout';
-import { MapPin, Calendar, Tool, CheckCircle, Clock, Phone } from 'lucide-react';
+import { MapPin, Calendar, Wrench, CheckCircle, Clock, Phone } from 'lucide-react';
 
 const Installation = () => {
   return (
@@ -22,7 +22,7 @@ const Installation = () => {
                 </p>
               </div>
               <div>
-                <Tool className="h-12 w-12 text-primary mx-auto mb-4" />
+                <Wrench className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Professional Grade Tools</h3>
                 <p className="text-muted-foreground text-sm">
                   Specialized equipment for precise installation and weatherproofing
@@ -63,7 +63,7 @@ const Installation = () => {
             </div>
             <div className="text-center">
               <div className="glass rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <Tool className="h-6 w-6 text-primary" />
+                <Wrench className="h-6 w-6 text-primary" />
               </div>
               <h3 className="font-semibold mb-2">3. Installation</h3>
               <p className="text-muted-foreground text-sm">

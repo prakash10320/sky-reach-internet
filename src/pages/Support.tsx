@@ -1,6 +1,6 @@
 
 import PageLayout from '@/components/PageLayout';
-import { Phone, MessageCircle, Mail, Clock, Headphones, Tool } from 'lucide-react';
+import { Phone, MessageCircle, Mail, Clock, Headphones, Wrench } from 'lucide-react';
 
 const Support = () => {
   return (
@@ -79,7 +79,7 @@ const Support = () => {
           <h2 className="text-3xl font-bold mb-8 text-center">How Can We Help?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="glass rounded-xl p-6">
-              <Tool className="h-8 w-8 text-primary mb-4" />
+              <Wrench className="h-8 w-8 text-primary mb-4" />
               <h3 className="font-semibold mb-2">Technical Issues</h3>
               <ul className="space-y-1 text-muted-foreground text-sm">
                 <li>• Internet connection problems</li>
