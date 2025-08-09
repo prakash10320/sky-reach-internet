@@ -1,20 +1,16 @@
-
 import { Satellite, Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ 
+      section.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
     }
   };
-
-  return (
-    <footer className="bg-secondary text-white relative overflow-hidden">
+  return <footer className="bg-secondary text-white relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
@@ -47,26 +43,17 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <button 
-                  onClick={() => scrollToSection('plans')}
-                  className="text-white/80 hover:text-white transition-colors text-left"
-                >
+                <button onClick={() => scrollToSection('plans')} className="text-white/80 hover:text-white transition-colors text-left">
                   View Plans
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('coverage')}
-                  className="text-white/80 hover:text-white transition-colors text-left"
-                >
+                <button onClick={() => scrollToSection('coverage')} className="text-white/80 hover:text-white transition-colors text-left">
                   Coverage Map
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('features')}
-                  className="text-white/80 hover:text-white transition-colors text-left"
-                >
+                <button onClick={() => scrollToSection('features')} className="text-white/80 hover:text-white transition-colors text-left">
                   Features
                 </button>
               </li>
@@ -186,10 +173,7 @@ const Footer = () => {
               <a href="tel:TNF" className="btn-primary">
                 Call Now: TNF
               </a>
-              <button 
-                onClick={() => scrollToSection('plans')}
-                className="btn-secondary"
-              >
+              <button onClick={() => scrollToSection('plans')} className="btn-secondary bg-blue-600 hover:bg-blue-500 text-slate-50">
                 View All Plans
               </button>
             </div>
@@ -201,8 +185,6 @@ const Footer = () => {
           <p>&copy; 2024 SkyLink. All rights reserved. Connecting you to tomorrow's possibilities.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
