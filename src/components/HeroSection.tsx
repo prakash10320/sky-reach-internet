@@ -1,14 +1,33 @@
+
 import { useState } from 'react';
 import { ArrowRight, MapPin, Zap, Shield, Globe } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 import heroBackground from '@/assets/hero-background.jpg';
 
 const HeroSection = () => {
   const [zipCode, setZipCode] = useState('');
+  const { toast } = useToast();
 
   const handleAvailabilityCheck = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate availability check
-    alert(`Checking availability for ${zipCode}...`);
+    if (!zipCode.trim()) {
+      toast({
+        title: "Please enter a ZIP code",
+        description: "ZIP code is required to check availability.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    // Show success message
+    toast({
+      title: "Inquiry Successful!",
+      description: "We will call you soon to discuss availability and plans.",
+      variant: "default"
+    });
+    
+    // Clear the input
+    setZipCode('');
   };
 
   return (

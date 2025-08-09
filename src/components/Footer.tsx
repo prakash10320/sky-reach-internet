@@ -3,6 +3,16 @@ import { Satellite, Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <footer className="bg-secondary text-white relative overflow-hidden">
       {/* Background Decorations */}
@@ -49,19 +59,28 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#plans" className="text-white/80 hover:text-white transition-colors">
+                <button 
+                  onClick={() => scrollToSection('plans')}
+                  className="text-white/80 hover:text-white transition-colors text-left"
+                >
                   View Plans
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#coverage" className="text-white/80 hover:text-white transition-colors">
+                <button 
+                  onClick={() => scrollToSection('coverage')}
+                  className="text-white/80 hover:text-white transition-colors text-left"
+                >
                   Coverage Map
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#features" className="text-white/80 hover:text-white transition-colors">
+                <button 
+                  onClick={() => scrollToSection('features')}
+                  className="text-white/80 hover:text-white transition-colors text-left"
+                >
                   Features
-                </a>
+                </button>
               </li>
               <li>
                 <Link to="/about" className="text-white/80 hover:text-white transition-colors">
@@ -147,9 +166,12 @@ const Footer = () => {
               <a href="tel:1-888-970-1698" className="btn-primary">
                 Call Now: 1-888-970-1698
               </a>
-              <a href="#plans" className="btn-secondary">
+              <button 
+                onClick={() => scrollToSection('plans')}
+                className="btn-secondary"
+              >
                 View All Plans
-              </a>
+              </button>
             </div>
           </div>
         </div>
