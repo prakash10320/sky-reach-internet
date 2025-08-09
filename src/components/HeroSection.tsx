@@ -1,13 +1,12 @@
-
 import { useState } from 'react';
 import { ArrowRight, MapPin, Zap, Shield, Globe } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import heroBackground from '@/assets/hero-background.jpg';
-
 const HeroSection = () => {
   const [zipCode, setZipCode] = useState('');
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleAvailabilityCheck = (e: React.FormEvent) => {
     e.preventDefault();
     if (!zipCode.trim()) {
@@ -18,27 +17,22 @@ const HeroSection = () => {
       });
       return;
     }
-    
+
     // Show success message
     toast({
       title: "Inquiry Successful!",
       description: "We will call you soon to discuss availability and plans.",
       variant: "default"
     });
-    
+
     // Clear the input
     setZipCode('');
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${heroBackground})`,
-        }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${heroBackground})`
+    }} />
       <div className="absolute inset-0 hero-bg opacity-90" />
       
       {/* Floating Elements */}
@@ -47,12 +41,16 @@ const HeroSection = () => {
           <Zap className="h-6 w-6 sm:h-8 sm:w-8 text-accent" />
         </div>
       </div>
-      <div className="absolute top-40 right-4 sm:right-20 float hidden sm:block" style={{ animationDelay: '2s' }}>
+      <div className="absolute top-40 right-4 sm:right-20 float hidden sm:block" style={{
+      animationDelay: '2s'
+    }}>
         <div className="glass p-3 sm:p-4 rounded-2xl">
           <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
         </div>
       </div>
-      <div className="absolute bottom-40 left-4 sm:left-20 float hidden lg:block" style={{ animationDelay: '4s' }}>
+      <div className="absolute bottom-40 left-4 sm:left-20 float hidden lg:block" style={{
+      animationDelay: '4s'
+    }}>
         <div className="glass p-3 sm:p-4 rounded-2xl">
           <Globe className="h-6 w-6 sm:h-8 sm:w-8 text-accent" />
         </div>
@@ -105,7 +103,7 @@ const HeroSection = () => {
                 <span className="sm:hidden">Call Now</span>
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </a>
-              <a href="#plans" className="btn-secondary text-center">
+              <a href="#plans" className="btn-secondary text-center bg-blue-300 ">
                 View Plans
               </a>
             </div>
@@ -117,13 +115,7 @@ const HeroSection = () => {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <div className="flex-1 relative">
                     <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-white/60" />
-                    <input
-                      type="text"
-                      placeholder="Enter ZIP code"
-                      value={zipCode}
-                      onChange={(e) => setZipCode(e.target.value)}
-                      className="w-full pl-9 sm:pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
-                    />
+                    <input type="text" placeholder="Enter ZIP code" value={zipCode} onChange={e => setZipCode(e.target.value)} className="w-full pl-9 sm:pl-10 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300" />
                   </div>
                   <button type="submit" className="btn-accent px-6 text-center">
                     Check
@@ -145,8 +137,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
