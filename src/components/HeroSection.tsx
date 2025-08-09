@@ -100,8 +100,8 @@ const HeroSection = () => {
           {/* CTA Section */}
           <div className="fade-in-up-delay space-y-6">
             <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 sm:px-0">
-              <a href="tel:1-888-970-1698" className="btn-primary pulse-glow text-center">
-                <span className="hidden sm:inline">Call Now: 1-888-970-1698</span>
+              <a href="tel:TNF" className="btn-primary pulse-glow text-center">
+                <span className="hidden sm:inline">Call Now: TNF</span>
                 <span className="sm:hidden">Call Now</span>
                 <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </a>
