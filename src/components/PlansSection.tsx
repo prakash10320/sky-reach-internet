@@ -1,15 +1,16 @@
+
 import { Check, Phone, Star } from 'lucide-react';
 
 const plans = [
   {
-    name: 'Residential Plan',
+    name: 'Basic Plan',
     subtitle: 'Perfect for homes',
     price: '$120',
     period: '/mo + taxes',
-    speed: 'Low Latency Unlimited Speed',
+    speed: 'Up to 300 Mbps',
     features: [
       'No data caps',
-      'Stable and secure connectivity for your residence',
+      'Stable and secure connectivity',
       'Enjoy seamless streaming and browsing',
       'Round-the-clock customer support',
       '99.9% reliability'
@@ -18,35 +19,33 @@ const plans = [
     color: 'primary'
   },
   {
-    name: 'Roam Plan',
-    subtitle: 'For mobile connectivity',
-    price: '$50',
+    name: 'Standard Plan',
+    subtitle: 'For families',
+    price: '$120',
     period: '/mo + taxes',
-    speed: 'Up to 500 Mbps',
-    package: 'Unlimited: $165/mo',
+    speed: 'Up to 300 Mbps',
     features: [
-      'Reliable high-speed connectivity at sea',
-      '24/7 onboard technical support',
-      'Smooth streaming and seamless navigation',
-      'Multi-device connectivity with secure encryption',
+      'No data caps',
+      'Stable and secure connectivity',
+      'Enjoy seamless streaming and browsing',
+      'Round-the-clock customer support',
       '99.9% reliability'
     ],
     popular: true,
     color: 'accent'
   },
   {
-    name: 'Boat Plan',
-    subtitle: 'For maritime use',
-    price: '$50',
+    name: 'Premium Plan',
+    subtitle: 'For businesses',
+    price: '$120',
     period: '/mo + taxes',
     speed: 'Up to 300 Mbps',
-    package: '1024GB: $165/mo',
     features: [
-      'Stable and secure connectivity on open waters',
-      'Enjoy seamless streaming and browsing while offshore',
+      'No data caps',
+      'Stable and secure connectivity',
+      'Enjoy seamless streaming and browsing',
       'Round-the-clock customer support',
-      'Weather-resistant equipment with easy installation',
-      'End-to-end encryption for secure communications'
+      '99.9% reliability'
     ],
     popular: false,
     color: 'primary'
@@ -105,9 +104,6 @@ const PlansSection = () => {
                       {plan.price}
                       <span className="text-lg font-normal text-white/70">{plan.period}</span>
                     </div>
-                    {plan.package && (
-                      <div className="text-accent font-semibold mt-2">{plan.package}</div>
-                    )}
                   </div>
                 </div>
 
