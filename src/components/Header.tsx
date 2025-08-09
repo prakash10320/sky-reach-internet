@@ -1,5 +1,7 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Satellite } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,7 +22,7 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
+          <Link to="/" className="flex items-center space-x-2 sm:space-x-3">
             <div className="p-1.5 sm:p-2 rounded-xl bg-primary/20 backdrop-blur-sm">
               <Satellite className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
             </div>
@@ -31,7 +33,7 @@ const Header = () => {
             <div className="sm:hidden">
               <h1 className="text-lg font-bold text-white">SkyLink</h1>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
@@ -47,10 +49,14 @@ const Header = () => {
               Features
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a href="#contact" className="text-white/90 hover:text-white transition-all duration-300 font-medium relative group">
-              Support
+            <Link to="/about" className="text-white/90 hover:text-white transition-all duration-300 font-medium relative group">
+              About
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
+            <Link to="/contact" className="text-white/90 hover:text-white transition-all duration-300 font-medium relative group">
+              Contact
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </Link>
           </nav>
 
           {/* CTA Button */}
@@ -100,13 +106,20 @@ const Header = () => {
             >
               Features
             </a>
-            <a 
-              href="#contact" 
+            <Link 
+              to="/about" 
               className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Support
-            </a>
+              About
+            </Link>
+            <Link 
+              to="/contact" 
+              className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
             <div className="border-t border-white/20 pt-4 mt-4">
               <a href="tel:1-888-970-1698" className="flex items-center space-x-2 text-white py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">
                 <Phone className="h-4 w-4" />

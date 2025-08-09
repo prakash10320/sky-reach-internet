@@ -1,4 +1,6 @@
+
 import { Satellite, Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -14,7 +16,7 @@ const Footer = () => {
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center space-x-3">
               <div className="p-2 rounded-xl bg-primary/20 backdrop-blur-sm">
                 <Satellite className="h-8 w-8 text-primary" />
               </div>
@@ -22,7 +24,7 @@ const Footer = () => {
                 <h1 className="text-xl font-bold">SkyLink</h1>
                 <p className="text-xs text-white/80">Satellite Internet</p>
               </div>
-            </div>
+            </Link>
             <p className="text-white/80 leading-relaxed">
               Connecting the world with reliable satellite internet. Experience lightning-fast speeds 
               and unmatched coverage, wherever you are.
@@ -62,9 +64,14 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-white/80 hover:text-white transition-colors">
-                  Contact Support
-                </a>
+                <Link to="/about" className="text-white/80 hover:text-white transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-white/80 hover:text-white transition-colors">
+                  Contact Us
+                </Link>
               </li>
             </ul>
           </div>
@@ -74,51 +81,56 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Services</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-white/80 hover:text-white transition-colors">
-                  Residential Internet
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white/80 hover:text-white transition-colors">
-                  Mobile Internet
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white/80 hover:text-white transition-colors">
-                  Maritime Internet
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white/80 hover:text-white transition-colors">
+                <Link to="/installation" className="text-white/80 hover:text-white transition-colors">
                   Installation Service
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link to="/support" className="text-white/80 hover:text-white transition-colors">
+                  Customer Support
+                </Link>
+              </li>
+              <li>
+                <Link to="/shipping" className="text-white/80 hover:text-white transition-colors">
+                  Shipping Info
+                </Link>
+              </li>
+              <li>
+                <Link to="/returns" className="text-white/80 hover:text-white transition-colors">
+                  Returns & Refunds
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="text-white/80 hover:text-white transition-colors">
+                  FAQ
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Company */}
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold">Support</h3>
+            <h3 className="text-lg font-semibold">Company</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-white/80 hover:text-white transition-colors">
-                  Help Center
-                </a>
+                <Link to="/careers" className="text-white/80 hover:text-white transition-colors">
+                  Careers
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-white/80 hover:text-white transition-colors">
-                  Installation Guide
-                </a>
+                <Link to="/blog" className="text-white/80 hover:text-white transition-colors">
+                  Blog
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-white/80 hover:text-white transition-colors">
-                  Troubleshooting
-                </a>
+                <Link to="/privacy" className="text-white/80 hover:text-white transition-colors">
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-white/80 hover:text-white transition-colors">
-                  Customer Portal
-                </a>
+                <Link to="/terms" className="text-white/80 hover:text-white transition-colors">
+                  Terms of Service
+                </Link>
               </li>
             </ul>
           </div>
@@ -148,16 +160,16 @@ const Footer = () => {
             © 2025 SkyLink Satellite Internet. All rights reserved.
           </div>
           <div className="flex items-center space-x-6 text-sm">
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            <Link to="/privacy" className="text-white/60 hover:text-white transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors">
+            </Link>
+            <Link to="/terms" className="text-white/60 hover:text-white transition-colors">
               Terms of Service
-            </a>
-            <a href="#" className="text-white/60 hover:text-white transition-colors flex items-center space-x-1">
-              <span>Accessibility</span>
+            </Link>
+            <Link to="/contact" className="text-white/60 hover:text-white transition-colors flex items-center space-x-1">
+              <span>Contact</span>
               <ExternalLink className="h-3 w-3" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
