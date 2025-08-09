@@ -15,6 +15,17 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToPlans = () => {
+    const plansSection = document.getElementById('plans');
+    if (plansSection) {
+      plansSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled ? 'glass backdrop-blur-xl border-b border-white/10' : 'bg-transparent'
@@ -65,7 +76,10 @@ const Header = () => {
               <Phone className="h-4 w-4" />
               <span className="font-semibold">1-888-970-1698</span>
             </a>
-            <button className="btn-primary text-sm sm:text-base px-4 sm:px-8 py-2 sm:py-4">
+            <button 
+              onClick={scrollToPlans}
+              className="btn-primary text-sm sm:text-base px-4 sm:px-8 py-2 sm:py-4"
+            >
               Get Started
             </button>
           </div>
@@ -125,7 +139,10 @@ const Header = () => {
                 <Phone className="h-4 w-4" />
                 <span className="font-semibold">1-888-970-1698</span>
               </a>
-              <button className="btn-primary w-full mt-4 text-center">
+              <button 
+                onClick={scrollToPlans}
+                className="btn-primary w-full mt-4 text-center"
+              >
                 Get Started
               </button>
             </div>

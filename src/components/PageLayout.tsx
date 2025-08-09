@@ -1,4 +1,5 @@
 
+import { useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -9,6 +10,11 @@ interface PageLayoutProps {
 }
 
 const PageLayout = ({ children, title, subtitle }: PageLayoutProps) => {
+  useEffect(() => {
+    // Scroll to top when component mounts (page navigation)
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, [title]); // Re-run when title changes (different page)
+
   return (
     <div className="min-h-screen">
       <Header />
