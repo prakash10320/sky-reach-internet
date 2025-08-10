@@ -1,12 +1,9 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Satellite } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -14,24 +11,19 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const scrollToPlans = () => {
     const plansSection = document.getElementById('plans');
     if (plansSection) {
-      plansSection.scrollIntoView({ 
+      plansSection.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
     }
     setIsMobileMenuOpen(false);
   };
-
-  return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled ? 'glass backdrop-blur-xl border-b border-white/10' : 'bg-transparent'
-    }`}>
+  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'glass backdrop-blur-xl border-b border-white/10' : 'bg-transparent'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20 bg-[#bccad2]">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 sm:space-x-3">
             <div className="p-1.5 sm:p-2 rounded-xl bg-primary/20 backdrop-blur-sm">
@@ -76,62 +68,33 @@ const Header = () => {
               <Phone className="h-4 w-4" />
               <span className="font-semibold">1-888-970-1698</span>
             </a>
-            <button 
-              onClick={scrollToPlans}
-              className="btn-primary text-sm sm:text-base px-4 sm:px-8 py-2 sm:py-4"
-            >
+            <button onClick={scrollToPlans} className="btn-primary text-sm sm:text-base px-4 sm:px-8 py-2 sm:py-4">
               Get Started
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="lg:hidden p-2 text-white transition-all duration-300 hover:bg-white/10 rounded-lg"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle mobile menu"
-          >
+          <button className="lg:hidden p-2 text-white transition-all duration-300 hover:bg-white/10 rounded-lg" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle mobile menu">
             {isMobileMenuOpen ? <X className="h-5 w-5 sm:h-6 sm:w-6" /> : <Menu className="h-5 w-5 sm:h-6 sm:w-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden absolute top-full left-0 right-0 glass backdrop-blur-xl border-t border-white/20 transition-all duration-500 ${
-          isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
-        }`}>
+        <div className={`lg:hidden absolute top-full left-0 right-0 glass backdrop-blur-xl border-t border-white/20 transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
           <div className="container mx-auto px-4 sm:px-6 py-6 space-y-4">
-            <a 
-              href="#plans" 
-              className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <a href="#plans" className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
               Plans
             </a>
-            <a 
-              href="#coverage" 
-              className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <a href="#coverage" className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
               Coverage
             </a>
-            <a 
-              href="#features" 
-              className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <a href="#features" className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
               Features
             </a>
-            <Link 
-              to="/about" 
-              className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <Link to="/about" className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
               About
             </Link>
-            <Link 
-              to="/contact" 
-              className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <Link to="/contact" className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
               Contact
             </Link>
             <div className="border-t border-white/20 pt-4 mt-4">
@@ -139,18 +102,13 @@ const Header = () => {
                 <Phone className="h-4 w-4" />
                 <span className="font-semibold">1-888-970-1698</span>
               </a>
-              <button 
-                onClick={scrollToPlans}
-                className="btn-primary w-full mt-4 text-center"
-              >
+              <button onClick={scrollToPlans} className="btn-primary w-full mt-4 text-center">
                 Get Started
               </button>
             </div>
           </div>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
