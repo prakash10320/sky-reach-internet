@@ -110,7 +110,7 @@ const Header = () => {
             <Link to="/about" className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
               About
             </Link>
-            <Link to="/contact" className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOp en(false)}>
+            <Link to="/contact" className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
               Contact
             </Link>
             <div className="border-t border-white/20 pt-4 mt-4">
