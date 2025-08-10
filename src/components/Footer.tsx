@@ -1,7 +1,5 @@
-
 import { Satellite, Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -12,9 +10,7 @@ const Footer = () => {
       });
     }
   };
-
-  return (
-    <footer className="bg-secondary text-white relative overflow-hidden">
+  return <footer className="bg-secondary text-white relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
@@ -194,11 +190,9 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-white/10 pt-8 text-center text-white/60">
-          <p>&copy; 2024 SkyLink. All rights reserved. Connecting you to tomorrow's possibilities.</p>
+          <p>© 2025 SkyLink. All rights reserved. Connecting you to tomorrow's possibilities.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
