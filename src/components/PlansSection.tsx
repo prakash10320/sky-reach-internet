@@ -1,54 +1,59 @@
 
-import { Check, Phone, Star } from 'lucide-react';
+import { Check, Phone, Star, Wifi, Globe, Anchor } from 'lucide-react';
 
 const plans = [
   {
-    name: 'Basic Plan',
+    name: 'Residential Plan',
     subtitle: 'Perfect for homes',
     price: '$120',
     period: '/mo + taxes',
-    speed: 'Up to 300 Mbps',
+    speed: 'Low Latency Unlimited Speed',
     features: [
       'No data caps',
-      'Stable and secure connectivity',
+      'Stable and secure connectivity for your residence',
       'Enjoy seamless streaming and browsing',
       'Round-the-clock customer support',
       '99.9% reliability'
     ],
     popular: false,
-    color: 'primary'
+    color: 'primary',
+    icon: Wifi
   },
   {
-    name: 'Standard Plan',
-    subtitle: 'For families',
-    price: '$120',
+    name: 'Roam Plan',
+    subtitle: 'For mobile connectivity',
+    price: '$50',
     period: '/mo + taxes',
-    speed: 'Up to 300 Mbps',
+    speed: 'Up to 500 Mbps',
+    additionalPricing: 'Unlimited: $165/mo',
+    packageInfo: 'Unlimited: $165/mo',
     features: [
-      'No data caps',
-      'Stable and secure connectivity',
-      'Enjoy seamless streaming and browsing',
-      'Round-the-clock customer support',
-      '99.9% reliability'
+      'Reliable high-speed connectivity at sea',
+      '24/7 onboard technical support',
+      'Smooth streaming and seamless navigation',
+      'Multi-device connectivity with secure'
     ],
     popular: true,
-    color: 'accent'
+    color: 'accent',
+    icon: Globe
   },
   {
-    name: 'Premium Plan',
-    subtitle: 'For businesses',
-    price: '$120',
+    name: 'Boat Plan',
+    subtitle: 'For maritime use',
+    price: '$50',
     period: '/mo + taxes',
     speed: 'Up to 300 Mbps',
+    additionalPricing: '1024GB: $165/mo',
+    packageInfo: '1024GB: $165/mo',
     features: [
-      'No data caps',
-      'Stable and secure connectivity',
-      'Enjoy seamless streaming and browsing',
+      'Stable and secure connectivity on open waters',
+      'Enjoy seamless streaming and browsing while offshore',
       'Round-the-clock customer support',
-      '99.9% reliability'
+      'Weather-resistant equipment with easy'
     ],
     popular: false,
-    color: 'primary'
+    color: 'primary',
+    icon: Anchor
   }
 ];
 
@@ -97,21 +102,41 @@ const PlansSection = () => {
               <div className="space-y-6">
                 {/* Plan Header */}
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                  <div className="flex items-center justify-center space-x-2 mb-2">
+                    <plan.icon className="h-6 w-6 text-white" />
+                    <h3 className="text-2xl font-bold text-white">{plan.name}</h3>
+                  </div>
                   <p className="text-white/70">{plan.subtitle}</p>
                   <div className="mt-4">
                     <div className="text-4xl font-bold text-white">
                       {plan.price}
                       <span className="text-lg font-normal text-white/70">{plan.period}</span>
                     </div>
+                    {plan.additionalPricing && (
+                      <div className="text-sm text-white/60 mt-1">{plan.additionalPricing}</div>
+                    )}
                   </div>
                 </div>
 
                 {/* Speed Info */}
                 <div className="text-center p-4 glass rounded-xl">
-                  <div className="text-sm text-white/70 mb-1">Speed</div>
+                  <div className="flex items-center justify-center space-x-2 mb-1">
+                    <Wifi className="h-4 w-4 text-white/70" />
+                    <div className="text-sm text-white/70">Speed</div>
+                  </div>
                   <div className="font-semibold text-white">{plan.speed}</div>
                 </div>
+
+                {/* Package Info (for Roam and Boat plans) */}
+                {plan.packageInfo && (
+                  <div className="text-center p-4 glass rounded-xl">
+                    <div className="flex items-center justify-center space-x-2 mb-1">
+                      <div className="w-4 h-4 border border-white/70 rounded" />
+                      <div className="text-sm text-white/70">Package</div>
+                    </div>
+                    <div className="font-semibold text-white">{plan.packageInfo}</div>
+                  </div>
+                )}
 
                 {/* Features */}
                 <div className="space-y-3">
@@ -137,13 +162,13 @@ const PlansSection = () => {
                 {/* CTA Button */}
                 <div className="pt-4">
                   <a 
-                    href="tel:1-888-970-1698" 
+                    href="tel:TNF" 
                     className={`w-full flex items-center justify-center space-x-2 ${
                       plan.popular ? 'btn-accent' : 'btn-primary'
                     } group-hover:scale-105 transition-transform duration-300`}
                   >
                     <Phone className="h-4 w-4" />
-                    <span>Call 1-888-970-1698</span>
+                    <span>Call TNF</span>
                   </a>
                 </div>
               </div>
@@ -161,7 +186,7 @@ const PlansSection = () => {
           </p>
           <div className="inline-flex items-center space-x-2 glass px-6 py-3 rounded-full">
             <Phone className="h-4 w-4 text-accent" />
-            <span className="text-white font-medium">Need help choosing? Call 1-888-970-1698</span>
+            <span className="text-white font-medium">Need help choosing? Call TNF</span>
           </div>
         </div>
       </div>
