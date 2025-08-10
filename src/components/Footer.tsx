@@ -1,5 +1,7 @@
+
 import { Satellite, Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -10,7 +12,9 @@ const Footer = () => {
       });
     }
   };
-  return <footer className="bg-secondary text-white relative overflow-hidden">
+
+  return (
+    <footer className="bg-secondary text-white relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
@@ -18,7 +22,7 @@ const Footer = () => {
       </div>
       
       <div className="container mx-auto px-6 py-16 relative z-10">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-12">
+        <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-8 mb-12">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -92,6 +96,38 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Company */}
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">Company</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to="/about" className="text-white/80 hover:text-white transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-white/80 hover:text-white transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="text-white/80 hover:text-white transition-colors">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-white/80 hover:text-white transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="text-white/80 hover:text-white transition-colors">
+                  FAQ
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact Info */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Contact</h3>
@@ -119,35 +155,11 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Company Links */}
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Company</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              <Link to="/about" className="text-white/80 hover:text-white transition-colors">
-                About Us
-              </Link>
-              <Link to="/contact" className="text-white/80 hover:text-white transition-colors">
-                Contact Us
-              </Link>
-              <Link to="/careers" className="text-white/80 hover:text-white transition-colors">
-                Careers
-              </Link>
-              <Link to="/blog" className="text-white/80 hover:text-white transition-colors">
-                Blog
-              </Link>
-              <Link to="/faq" className="text-white/80 hover:text-white transition-colors">
-                FAQ
-              </Link>
-              <Link to="/support" className="text-white/80 hover:text-white transition-colors">
-                Support
-              </Link>
-            </div>
-          </div>
-
+        {/* Legal Links */}
+        <div className="space-y-6 mb-12">
           <div>
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <Link to="/privacy" className="text-white/80 hover:text-white transition-colors">
                 Privacy Policy
               </Link>
@@ -185,6 +197,8 @@ const Footer = () => {
           <p>&copy; 2024 SkyLink. All rights reserved. Connecting you to tomorrow's possibilities.</p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
