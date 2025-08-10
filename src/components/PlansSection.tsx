@@ -162,13 +162,13 @@ const PlansSection = () => {
                 {/* CTA Button */}
                 <div className="pt-4">
                   <a 
-                    href="tel:TNF" 
+                    href="tel:8552147142" 
                     className={`w-full flex items-center justify-center space-x-2 ${
                       plan.popular ? 'btn-accent' : 'btn-primary'
                     } group-hover:scale-105 transition-transform duration-300`}
                   >
                     <Phone className="h-4 w-4" />
-                    <span>Call TNF</span>
+                    <span>Call Now: 8552147142 TFN</span>
                   </a>
                 </div>
               </div>
@@ -186,7 +186,7 @@ const PlansSection = () => {
           </p>
           <div className="inline-flex items-center space-x-2 glass px-6 py-3 rounded-full">
             <Phone className="h-4 w-4 text-accent" />
-            <span className="text-white font-medium">Need help choosing? Call TNF</span>
+            <span className="text-white font-medium">Need help choosing? Call Now: 8552147142 TFN</span>
           </div>
         </div>
       </div>

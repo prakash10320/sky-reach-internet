@@ -74,9 +74,9 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
-            <a href="tel:TNF" className="hidden xl:flex items-center space-x-2 text-white/90 hover:text-white transition-all duration-300">
+            <a href="tel:8552147142" className="hidden xl:flex items-center space-x-2 text-white/90 hover:text-white transition-all duration-300">
               <Phone className="h-4 w-4" />
-              <span className="font-semibold">TNF</span>
+              <span className="font-semibold">8552147142 TFN</span>
             </a>
             <button onClick={scrollToPlans} className="btn-primary text-sm sm:text-base px-4 sm:px-8 py-2 sm:py-4">
               Get Started
@@ -110,13 +110,13 @@ const Header = () => {
             <Link to="/about" className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
               About
             </Link>
-            <Link to="/contact" className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link to="/contact" className="block text-white/90 hover:text-white transition-all duration-300 py-3 px-4 rounded-lg hover:bg-white/10" onClick={() => setIsMobileMenuOp en(false)}>
               Contact
             </Link>
             <div className="border-t border-white/20 pt-4 mt-4">
-              <a href="tel:TNF" className="flex items-center space-x-2 text-white py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">
+              <a href="tel:8552147142" className="flex items-center space-x-2 text-white py-3 px-4 rounded-lg hover:bg-white/10 transition-all duration-300">
                 <Phone className="h-4 w-4" />
-                <span className="font-semibold">TNF</span>
+                <span className="font-semibold">8552147142 TFN</span>
               </a>
               <button onClick={scrollToPlans} className="btn-primary w-full mt-4 text-center">
                 Get Started
